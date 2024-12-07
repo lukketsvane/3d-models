@@ -2,19 +2,19 @@ import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { SlidableTile } from './SlidableTile'
 
 const MODEL_URLS = [
-  '/models/plant_01.glb',
-  '/models/food_fries_01.glb',
-  '/models/camera_01.glb',
-  '/models/picnic_01.glb',
-  '/models/picnic_02.glb',
-  '/models/kitchenware_salt_pepper_01.glb',
-  '/models/kitchenware_salt_pepper_02.glb',
-  '/models/kitchenware_salt_pepper_03.glb',
-  '/models/kitchenware_salt_pepper_04.glb',
+  './../models/plant_01.glb',
+  '../../models/food_fries_01.glb',
+  '../../models/camera_01.glb',
+  '../../models/picnic_01.glb',
+  '../../models/picnic_02.glb',
+  '../../models/salt_pepper_01.glb',
+  '../../models/salt_pepper_02.glb',
+  '../../models/salt_pepper_03.glb',
+  '../../models/salt_pepper_04.glb',
 ]
 
 interface Tile {
-  id: number
+  id: numberF
   modelUrl: string
 }
 
