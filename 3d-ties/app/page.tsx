@@ -1,57 +1,18 @@
 'use client'
 
-import React, { useState, useEffect, Suspense, useRef } from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
-import { OrbitControls, useGLTF, Environment } from '@react-three/drei'
+import React, { useState, useEffect, Suspense } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls, Environment } from '@react-three/drei'
 import * as THREE from 'three'
+import { Model } from '../components/model'
+import { LightControl } from '../components/light-controls'
+import { ModelControls } from '../components/model-controls'
 
-function Model({ url, onClick, showTextures }: { url: string; onClick: () => void; showTextures: boolean }) {
-  const { scene } = useGLTF(url)
-  const modelRef = useRef<THREE.Group>(null)
-  const { raycaster, camera, size } = useThree()
-  const [originalMaterials] = useState<{ [key: string]: THREE.Material }>({})
-
-  useEffect(() => {
-    const clayMaterial = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.7, metalness: 0.05 })
-    scene.traverse((child: THREE.Object3D) => {
-      if (child instanceof THREE.Mesh) {
-        originalMaterials[child.uuid] = child.material
-        child.material = showTextures ? child.material : clayMaterial
-        child.geometry.computeVertexNormals()
-      }
-    })
-
-    const box = new THREE.Box3().setFromObject(scene)
-    const center = box.getCenter(new THREE.Vector3())
-    const maxDim = Math.max(...box.getSize(new THREE.Vector3()).toArray())
-    scene.position.sub(center.multiplyScalar(2 / maxDim))
-    scene.scale.multiplyScalar(2 / maxDim)
-
-    const handleClick = (event: MouseEvent) => {
-      const mouse = new THREE.Vector2((event.clientX / size.width) * 2 - 1, -(event.clientY / size.height) * 2 + 1)
-      raycaster.setFromCamera(mouse, camera)
-      if (raycaster.intersectObject(modelRef.current!, true).length > 0) onClick()
-    }
-    window.addEventListener('click', handleClick)
-    return () => window.removeEventListener('click', handleClick)
-  }, [scene, showTextures, onClick, raycaster, camera, size, originalMaterials])
-
-  useEffect(() => {
-    scene.traverse((child: THREE.Object3D) => {
-      if (child instanceof THREE.Mesh) {
-        child.material = showTextures ? originalMaterials[child.uuid] : 
-          new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.7, metalness: 0.05 })
-      }
-    })
-  }, [showTextures, originalMaterials, scene])
-
-  return <primitive ref={modelRef} object={scene} />
-}
-
-function ModelViewer() {
+export default function ModelViewer() {
   const [modelUrls, setModelUrls] = useState<string[]>([])
   const [currentModelIndex, setCurrentModelIndex] = useState(0)
   const [showTextures, setShowTextures] = useState(false)
+  const [lightPosition, setLightPosition] = useState(new THREE.Vector3(5, 5, 5))
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -73,18 +34,12 @@ function ModelViewer() {
     loadAllModels()
   }, [])
 
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => setShowTextures(e.type === 'keydown' && (e.key === 't' || e.key === 'T'))
-    window.addEventListener('keydown', handleKey)
-    window.addEventListener('keyup', handleKey)
-    return () => {
-      window.removeEventListener('keydown', handleKey)
-      window.removeEventListener('keyup', handleKey)
-    }
-  }, [])
-
   const handleNextModel = () => {
     setCurrentModelIndex((prevIndex) => (prevIndex + 1) % modelUrls.length)
+  }
+
+  const toggleTextures = () => {
+    setShowTextures(prev => !prev)
   }
 
   if (isLoading) {
@@ -100,29 +55,24 @@ function ModelViewer() {
       <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
         <color attach="background" args={['#000000']} />
         <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <spotLight position={[5, 5, 5]} angle={0.15} penumbra={1} intensity={1} castShadow />
+          <LightControl position={lightPosition} setPosition={setLightPosition} />
           <Model 
             url={modelUrls[currentModelIndex]} 
-            onClick={handleNextModel} 
-            showTextures={showTextures} 
+            showTextures={showTextures}
+            onClick={handleNextModel}
           />
           <OrbitControls makeDefault />
-          <Environment preset="studio" />
         </Suspense>
       </Canvas>
-      <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded">
-        Model: {currentModelIndex + 1} / {modelUrls.length}
-      </div>
+      <ModelControls 
+        currentModel={currentModelIndex + 1}
+        totalModels={modelUrls.length}
+        showTextures={showTextures}
+        onToggleTextures={toggleTextures}
+        lightPosition={lightPosition}
+        setLightPosition={setLightPosition}
+      />
     </div>
-  )
-}
-
-export default function Home() {
-  return (
-    <main className="w-screen h-screen overflow-hidden">
-      <ModelViewer />
-    </main>
   )
 }
 
