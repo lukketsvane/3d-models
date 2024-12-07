@@ -52,9 +52,25 @@ function ModelViewer() {
   const [modelUrls, setModelUrls] = useState<string[]>([])
   const [currentModelIndex, setCurrentModelIndex] = useState(0)
   const [showTextures, setShowTextures] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/model-urls').then(res => res.json()).then(setModelUrls).catch(console.error)
+    async function loadAllModels() {
+      try {
+        const response = await fetch('/api/model-urls')
+        if (!response.ok) {
+          throw new Error('Failed to fetch model URLs')
+        }
+        const urls = await response.json()
+        setModelUrls(urls)
+        setIsLoading(false)
+      } catch (error) {
+        console.error('Error loading model URLs:', error)
+        setIsLoading(false)
+      }
+    }
+
+    loadAllModels()
   }, [])
 
   useEffect(() => {
@@ -67,7 +83,17 @@ function ModelViewer() {
     }
   }, [])
 
-  if (modelUrls.length === 0) return <div>Loading models...</div>
+  const handleNextModel = () => {
+    setCurrentModelIndex((prevIndex) => (prevIndex + 1) % modelUrls.length)
+  }
+
+  if (isLoading) {
+    return <div className="w-full h-screen flex items-center justify-center">Loading models...</div>
+  }
+
+  if (modelUrls.length === 0) {
+    return <div className="w-full h-screen flex items-center justify-center">No models found</div>
+  }
 
   return (
     <div className="w-full h-screen">
@@ -78,13 +104,16 @@ function ModelViewer() {
           <spotLight position={[5, 5, 5]} angle={0.15} penumbra={1} intensity={1} castShadow />
           <Model 
             url={modelUrls[currentModelIndex]} 
-            onClick={() => setCurrentModelIndex((prevIndex) => (prevIndex + 1) % modelUrls.length)} 
+            onClick={handleNextModel} 
             showTextures={showTextures} 
           />
           <OrbitControls makeDefault />
           <Environment preset="studio" />
         </Suspense>
       </Canvas>
+      <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded">
+        Model: {currentModelIndex + 1} / {modelUrls.length}
+      </div>
     </div>
   )
 }
