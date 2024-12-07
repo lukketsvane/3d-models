@@ -1,21 +1,11 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { SlidableTile } from './SlidableTile'
-
-const MODEL_URLS = [
-  './../models/plant_01.glb',
-  '../../models/food_fries_01.glb',
-  '../../models/camera_01.glb',
-  '../../models/picnic_01.glb',
-  '../../models/picnic_02.glb',
-  '../../models/salt_pepper_01.glb',
-  '../../models/salt_pepper_02.glb',
-  '../../models/salt_pepper_03.glb',
-  '../../models/salt_pepper_04.glb',
-]
+import { MODEL_URLS } from '../utils/modelUrls'
+import { checkModelAvailability } from '../utils/modelLoader'
 
 interface Tile {
-  id: numberF
-  modelUrl: string
+  id: number
+  modelUrl: string | null
 }
 
 const TILE_SIZE = 350
@@ -24,19 +14,42 @@ const BUFFER_TILES = 2
 const TOTAL_TILES = VISIBLE_TILES + BUFFER_TILES * 2
 
 export const SlidableGrid: React.FC = () => {
-  const [grid, setGrid] = useState<Tile[][]>(
-    Array(TOTAL_TILES).fill(null).map((_, rowIndex) =>
-      Array(TOTAL_TILES).fill(null).map((_, colIndex) => ({
-        id: rowIndex * TOTAL_TILES + colIndex,
-        modelUrl: MODEL_URLS[(rowIndex * TOTAL_TILES + colIndex) % MODEL_URLS.length],
-      }))
-    )
-  )
-
+  const [grid, setGrid] = useState<Tile[][]>([])
   const [offset, setOffset] = useState({ x: 0, y: 0 })
   const gridRef = useRef<HTMLDivElement>(null)
   const isDragging = useRef(false)
   const lastPosition = useRef({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const initializeGrid = async () => {
+      const availableModels = await Promise.all(
+        MODEL_URLS.map(async (url) => {
+          try {
+            const isAvailable = await checkModelAvailability(url)
+            return isAvailable ? url : null
+          } catch (error) {
+            console.error(`Error checking availability for ${url}:`, error)
+            return null
+          }
+        })
+      )
+
+      const filteredModels = availableModels.filter((url): url is string => url !== null)
+
+      setGrid(
+        Array(TOTAL_TILES).fill(null).map((_, rowIndex) =>
+          Array(TOTAL_TILES).fill(null).map((_, colIndex) => ({
+            id: rowIndex * TOTAL_TILES + colIndex,
+            modelUrl: filteredModels.length > 0
+              ? filteredModels[(rowIndex * TOTAL_TILES + colIndex) % filteredModels.length]
+              : null
+          }))
+        )
+      )
+    }
+
+    initializeGrid()
+  }, [])
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     isDragging.current = true
@@ -95,6 +108,10 @@ export const SlidableGrid: React.FC = () => {
 
     wrapGrid()
   }, [offset])
+
+  if (grid.length === 0) {
+    return <div>Loading...</div>
+  }
 
   return (
     <div 
