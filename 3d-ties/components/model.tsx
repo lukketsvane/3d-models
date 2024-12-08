@@ -15,7 +15,7 @@ interface ModelProps {
 
 export function Model({ url, showTextures, onClick, materialProperties }: ModelProps) {
   const { scene } = useGLTF(url)
-  const modelRef = useRef<THREE.Group>(null)
+  const modelRef = useRef<THREE.Object3D>(null)
   const [originalMaterials] = useState<{ [key: string]: THREE.Material }>({})
   const { raycaster, camera, size } = useThree()
 
@@ -30,18 +30,19 @@ export function Model({ url, showTextures, onClick, materialProperties }: ModelP
 
   useEffect(() => {
     scene.traverse((child: THREE.Object3D) => {
-      if (child instanceof THREE.Mesh) {
-        child.geometry.computeVertexNormals()
+      if (child.type === 'Mesh' && 'material' in child && 'geometry' in child) {
+        const meshChild = child as THREE.Object3D & { material: THREE.Material, geometry: THREE.BufferGeometry }
+        meshChild.geometry.computeVertexNormals()
         
-        if (!originalMaterials[child.uuid]) {
-          originalMaterials[child.uuid] = child.material
+        if (!originalMaterials[meshChild.uuid]) {
+          originalMaterials[meshChild.uuid] = meshChild.material
         }
         
         if (showTextures) {
-          const material = originalMaterials[child.uuid].clone()
+          const material = (originalMaterials[meshChild.uuid] as THREE.MeshStandardMaterial).clone()
           
-          if (material.map) {
-            material.map.encoding = THREE.sRGBEncoding
+          if ('map' in material && material.map) {
+            material.map.colorSpace = THREE.SRGBColorSpace
             material.map.anisotropy = 16
             material.map.needsUpdate = true
 
@@ -57,25 +58,22 @@ export function Model({ url, showTextures, onClick, materialProperties }: ModelP
             newMaterial.emissive.setRGB(0.2, 0.2, 0.2)
             newMaterial.emissiveMap = material.map
 
-            child.material = newMaterial
-          } else {
+            meshChild.material = newMaterial
+          } else if (material instanceof THREE.MeshStandardMaterial) {
             material.bumpScale = 0.02
             material.roughness = materialProperties.roughness
             material.metalness = materialProperties.metalness
-            child.material = material
+            meshChild.material = material
           }
         } else {
           const clayMaterialWithBump = clayMaterial.clone()
-          if (originalMaterials[child.uuid].map) {
-            clayMaterialWithBump.bumpMap = originalMaterials[child.uuid].map
+          if ((originalMaterials[meshChild.uuid] as THREE.MeshStandardMaterial).map) {
+            clayMaterialWithBump.bumpMap = (originalMaterials[meshChild.uuid] as THREE.MeshStandardMaterial).map
             clayMaterialWithBump.bumpScale = 0.05
           }
-          child.material = clayMaterialWithBump
+          meshChild.material = clayMaterialWithBump
         }
 
-        // Ensure the material can receive shadows
-        child.material.receiveShadow = true
-        child.material.castShadow = true
       }
     })
 
@@ -87,12 +85,13 @@ export function Model({ url, showTextures, onClick, materialProperties }: ModelP
 
     return () => {
       scene.traverse((child: THREE.Object3D) => {
-        if (child instanceof THREE.Mesh) {
-          if (child.material) {
-            if (Array.isArray(child.material)) {
-              child.material.forEach(material => material.dispose())
+        if (child.type === 'Mesh' && 'material' in child) {
+          const meshChild = child as THREE.Object3D & { material: THREE.Material | THREE.Material[] }
+          if (meshChild.material) {
+            if (Array.isArray(meshChild.material)) {
+              meshChild.material.forEach(material => material.dispose())
             } else {
-              child.material.dispose()
+              meshChild.material.dispose()
             }
           }
         }

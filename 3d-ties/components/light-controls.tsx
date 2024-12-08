@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 interface LightControlProps {
   position: THREE.Vector3
-  setPosition: React.Dispatch<React.SetStateAction<THREE.Vector3>>
+  setPosition: (position: THREE.Vector3) => void
   color: number
   intensity: number
   falloff: number
@@ -13,20 +13,20 @@ interface LightControlProps {
 
 export function LightControl({ position, setPosition, color, intensity, falloff, isSelected }: LightControlProps) {
   const lightRef = useRef<THREE.DirectionalLight>(null)
-  const { gl, camera } = useThree()
+  const { gl } = useThree()
   const isDragging = useRef(false)
   const previousMousePosition = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
     const handleMouseDown = (event: MouseEvent) => {
-      if (event.shiftKey && !event.ctrlKey && !event.altKey) {
+      if (event.shiftKey && !event.ctrlKey) {
         isDragging.current = true
         previousMousePosition.current = { x: event.clientX, y: event.clientY }
       }
     }
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (isDragging.current && event.shiftKey && !event.ctrlKey && !event.altKey) {
+      if (isDragging.current && event.shiftKey && !event.ctrlKey) {
         const deltaMove = {
           x: event.clientX - previousMousePosition.current.x,
           y: event.clientY - previousMousePosition.current.y
@@ -106,4 +106,3 @@ export function LightControl({ position, setPosition, color, intensity, falloff,
     </>
   )
 }
-

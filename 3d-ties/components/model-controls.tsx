@@ -90,13 +90,6 @@ export function ModelControls({
     }
   }, [])
 
-  const handleMouseDown = useCallback((event: React.MouseEvent) => {
-    if (isShiftPressed) {
-      isDragging.current = true
-      previousMousePosition.current = { x: event.clientX, y: event.clientY }
-    }
-  }, [isShiftPressed])
-
   const handleMouseMove = useCallback((event: MouseEvent) => {
     if (isDragging.current && isShiftPressed) {
       const deltaMove = {
@@ -152,8 +145,14 @@ export function ModelControls({
     <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 w-[280px]">
       <div className="space-y-1">
         <div className="flex justify-start items-center mb-2">
-          <span> {lightPositions.length}</span>
-          <Button onClick={addLight} size="sm" className="text-white/50 hover:text-white">
+          <span>Model: {currentModel} / {totalModels}</span>
+          <Button onClick={onToggleTextures} size="sm" className="ml-2">
+            {showTextures ? 'Hide Textures' : 'Show Textures'}
+          </Button>
+        </div>
+        <div className="flex justify-start items-center mb-2">
+          <span>{lightPositions.length} Lights</span>
+          <Button onClick={addLight} size="sm" className="text-white/50 hover:text-white ml-2">
             <Plus className="h-4 w-4" />
           </Button>
         </div>
@@ -203,8 +202,6 @@ export function ModelControls({
           </div>
         ))}
       </div>
-
     </div>
   )
 }
-
