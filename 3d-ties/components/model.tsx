@@ -52,17 +52,18 @@ export function Model({ url, showTextures, onClick, materialProperties }: ModelP
               bumpScale: 0.05,
               roughness: materialProperties.roughness,
               metalness: materialProperties.metalness,
+              emissive: new THREE.Color(0xffffff),
+              emissiveMap: material.map,
+              emissiveIntensity: 0.2,
             })
-
-            // Increase the emissive intensity to make the texture brighter
-            newMaterial.emissive.setRGB(0.2, 0.2, 0.2)
-            newMaterial.emissiveMap = material.map
 
             meshChild.material = newMaterial
           } else if (material instanceof THREE.MeshStandardMaterial) {
             material.bumpScale = 0.02
             material.roughness = materialProperties.roughness
             material.metalness = materialProperties.metalness
+            material.emissive = new THREE.Color(0xffffff)
+            material.emissiveIntensity = 0.1
             meshChild.material = material
           }
         } else {
@@ -73,7 +74,6 @@ export function Model({ url, showTextures, onClick, materialProperties }: ModelP
           }
           meshChild.material = clayMaterialWithBump
         }
-
       }
     })
 

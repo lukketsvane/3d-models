@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useCallback, Suspense } from 'react'
+import React, { useState, useEffect, useCallback, Suspense, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
@@ -19,13 +19,31 @@ export default function ModelViewer() {
     new THREE.Vector3(5, -5, -5),
     new THREE.Vector3(-5, -5, 5)
   ])
-  const [lightIntensities, setLightIntensities] = useState([0.26, 0.57, 0.14, 0.71, 0.67])
+  const [lightIntensities, setLightIntensities] = useState([3.18, 4.36, 0.66, 5.00, 0.00])
+  const [lightColors, setLightColors] = useState(() => {
+    const color1 = new THREE.Color().setHSL(0.0, 1, 0.5)
+    const color2 = new THREE.Color().setHSL(0.77, 1, 0.5)
+    const color3 = new THREE.Color().setHSL(0.0, 1, 0.5)
+    const color4 = new THREE.Color().setHSL(0.0, 1, 0.5)
+    const color5 = new THREE.Color().setHSL(0.0, 1, 0.5)
+    return [
+      '#' + color1.getHexString(),
+      '#' + color2.getHexString(),
+      '#' + color3.getHexString(),
+      '#' + color4.getHexString(),
+      '#' + color5.getHexString()
+    ]
+  })
   const [lightFalloffs, setLightFalloffs] = useState([0.00, 1.78, 1.68, 0.89, 1.26])
-  const [lightColors, setLightColors] = useState(['#ffffff', '#00FFFF', '#ffffff', '#FF4500', '#ffffff'])
   const [selectedLight, setSelectedLight] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
-  const [materialProperties, setMaterialProperties] = useState({ roughness: 0.5, metalness: 0.5 })
+  const [materialProperties, setMaterialProperties] = useState({ roughness: 1.0, metalness: 0.01 })
+  const isDragging = useRef(false)
+  const previousMousePosition = useRef({ x: 0, y: 0 })
+  const [isShiftPressed, setIsShiftPressed] = useState(false)
+  const [isCtrlPressed, setIsCtrlPressed] = useState(false)
+  const [isAltPressed, setIsAltPressed] = useState(false)
 
   useEffect(() => {
     async function loadAllModels() {
@@ -58,7 +76,7 @@ export default function ModelViewer() {
   const updateLightIntensity = useCallback((index: number, intensity: number) => {
     setLightIntensities(prev => {
       const newIntensities = [...prev]
-      newIntensities[index] = Math.max(0, Math.min(2, intensity))
+      newIntensities[index] = Math.max(0, Math.min(10, intensity))
       return newIntensities
     })
   }, [])
@@ -106,6 +124,91 @@ export default function ModelViewer() {
   const updateMaterialProperties = useCallback((roughness: number, metalness: number) => {
     setMaterialProperties({ roughness, metalness })
   }, [])
+
+  const handleKeyDown = useCallback((event: KeyboardEvent) => {
+    if (event.shiftKey) {
+      setIsShiftPressed(true)
+    }
+    if (event.ctrlKey) {
+      setIsCtrlPressed(true)
+    }
+    if (event.altKey) {
+      setIsAltPressed(true)
+    }
+  }, [])
+
+  const handleKeyUp = useCallback((event: KeyboardEvent) => {
+    if (!event.shiftKey) {
+      setIsShiftPressed(false)
+    }
+    if (!event.ctrlKey) {
+      setIsCtrlPressed(false)
+    }
+    if (!event.altKey) {
+      setIsAltPressed(false)
+    }
+  }, [])
+
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    if (isDragging.current && isShiftPressed) {
+      const deltaMove = {
+        x: event.clientX - previousMousePosition.current.x,
+        y: event.clientY - previousMousePosition.current.y
+      }
+
+      if (isCtrlPressed && !isAltPressed) {
+        // Adjust light intensity
+        const intensityDelta = -deltaMove.y * 0.01
+        const newIntensity = Math.max(0, Math.min(10, lightIntensities[selectedLight] + intensityDelta))
+        updateLightIntensity(selectedLight, newIntensity)
+
+        // Adjust light hue
+        const hueShift = deltaMove.x * 0.5
+        const color = new THREE.Color(lightColors[selectedLight])
+        const hsl = { h: 0, s: 0, l: 0 }
+        color.getHSL(hsl)
+        hsl.h = (hsl.h + hueShift / 360) % 1
+        color.setHSL(hsl.h, hsl.s, hsl.l)
+        updateLightColor(selectedLight, '#' + color.getHexString())
+      } else if (isAltPressed && !isCtrlPressed) {
+        // Adjust material properties
+        const roughnessDelta = -deltaMove.y * 0.005
+        const metalnessDelta = deltaMove.x * 0.005
+        const newRoughness = Math.max(0, Math.min(1, materialProperties.roughness + roughnessDelta))
+        const newMetalness = Math.max(0, Math.min(1, materialProperties.metalness + metalnessDelta))
+        updateMaterialProperties(newRoughness, newMetalness)
+      }
+
+      previousMousePosition.current = { x: event.clientX, y: event.clientY }
+    }
+  }, [isShiftPressed, isCtrlPressed, isAltPressed, lightIntensities, lightColors, selectedLight, updateLightIntensity, updateLightColor, materialProperties, updateMaterialProperties])
+
+  const handleMouseDown = useCallback((event: MouseEvent) => {
+    if (isShiftPressed) {
+      isDragging.current = true
+      previousMousePosition.current = { x: event.clientX, y: event.clientY }
+    }
+  }, [isShiftPressed])
+
+  const handleMouseUp = useCallback(() => {
+    isDragging.current = false
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousedown', handleMouseDown)
+    window.addEventListener('mouseup', handleMouseUp)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mousedown', handleMouseDown)
+      window.removeEventListener('mouseup', handleMouseUp)
+    }
+  }, [handleKeyDown, handleKeyUp, handleMouseMove, handleMouseDown, handleMouseUp])
 
   if (isLoading) {
     return <div className="w-full h-screen flex items-center justify-center">Loading models...</div>
@@ -166,7 +269,11 @@ export default function ModelViewer() {
         addLight={addLight}
         removeLight={removeLight}
         updateMaterialProperties={updateMaterialProperties}
+        materialProperties={materialProperties}
       />
+      <div className="absolute bottom-4 right-4 text-white bg-black bg-opacity-50 p-2">
+        <p className="text-xs">Hold Shift + Ctrl and click-drag to adjust light intensity (vertical) and hue (horizontal). Hold Shift + Alt to adjust material properties.</p>
+      </div>
     </div>
   )
 }

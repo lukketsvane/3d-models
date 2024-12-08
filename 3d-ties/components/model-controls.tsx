@@ -103,9 +103,14 @@ export function ModelControls({
         const newIntensity = Math.max(0, Math.min(2, lightIntensities[selectedLight] + intensityDelta))
         updateLightIntensity(selectedLight, newIntensity)
 
-        const falloffDelta = deltaMove.x * 0.01
-        const newFalloff = Math.max(0, Math.min(5, lightFalloffs[selectedLight] + falloffDelta))
-        updateLightFalloff(selectedLight, newFalloff)
+        // Adjust light hue
+        const hueShift = deltaMove.x * 0.5
+        const color = new THREE.Color(lightColors[selectedLight])
+        const hsl = { h: 0, s: 0, l: 0 }
+        color.getHSL(hsl)
+        hsl.h = (hsl.h + hueShift / 360) % 1
+        color.setHSL(hsl.h, hsl.s, hsl.l)
+        updateLightColor(selectedLight, '#' + color.getHexString())
       } else if (isAltPressed && !isCtrlPressed) {
         // Adjust material properties
         const roughnessDelta = -deltaMove.y * 0.005
@@ -121,7 +126,14 @@ export function ModelControls({
 
       previousMousePosition.current = { x: event.clientX, y: event.clientY }
     }
-  }, [isShiftPressed, isCtrlPressed, isAltPressed, lightIntensities, lightFalloffs, selectedLight, updateLightIntensity, updateLightFalloff, roughness, metalness, updateMaterialProperties])
+  }, [isShiftPressed, isCtrlPressed, isAltPressed, lightIntensities, lightColors, selectedLight, updateLightIntensity, updateLightColor, roughness, metalness, updateMaterialProperties])
+
+  const handleMouseDown = useCallback((event: MouseEvent) => {
+    if (isShiftPressed && (isCtrlPressed || isAltPressed)) {
+      isDragging.current = true
+      previousMousePosition.current = { x: event.clientX, y: event.clientY }
+    }
+  }, [isShiftPressed, isCtrlPressed, isAltPressed])
 
   const handleMouseUp = useCallback(() => {
     isDragging.current = false
@@ -131,15 +143,17 @@ export function ModelControls({
     window.addEventListener('keydown', handleKeyDown)
     window.addEventListener('keyup', handleKeyUp)
     window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousedown', handleMouseDown)
     window.addEventListener('mouseup', handleMouseUp)
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
       window.removeEventListener('keyup', handleKeyUp)
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mousedown', handleMouseDown)
       window.removeEventListener('mouseup', handleMouseUp)
     }
-  }, [handleKeyDown, handleKeyUp, handleMouseMove, handleMouseUp])
+  }, [handleKeyDown, handleKeyUp, handleMouseMove, handleMouseDown, handleMouseUp])
 
   return (
     <div className="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 w-[280px]">
@@ -197,11 +211,19 @@ export function ModelControls({
               </Tooltip>
             </TooltipProvider>
             <span className="text-xs">
-              I: {lightIntensities[index].toFixed(2)} F: {lightFalloffs[index].toFixed(2)}
+              I: {lightIntensities[index].toFixed(2)} H: {new THREE.Color(lightColors[index]).getHSL({h: 0, s: 0, l: 0}).h.toFixed(2)}
             </span>
           </div>
         ))}
+        <div className="mt-2 text-xs">
+          <p>Material: R: {roughness.toFixed(2)} M: {metalness.toFixed(2)}</p>
+        </div>
+        <div className="mt-2 text-xs">
+          <p>Hold Shift + Ctrl and click-drag to adjust light intensity (vertical) and hue (horizontal).</p>
+          <p>Hold Shift + Alt and click-drag to adjust material roughness (vertical) and metalness (horizontal).</p>
+        </div>
       </div>
     </div>
   )
 }
+
