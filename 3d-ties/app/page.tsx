@@ -269,7 +269,6 @@ export default function ModelViewer() {
         addLight={addLight}
         removeLight={removeLight}
         updateMaterialProperties={updateMaterialProperties}
-        materialProperties={materialProperties}
       />
       <div className="absolute bottom-4 right-4 text-white bg-black bg-opacity-50 p-2">
         <p className="text-xs">Hold Shift + Ctrl and click-drag to adjust light intensity (vertical) and hue (horizontal). Hold Shift + Alt to adjust material properties.</p>

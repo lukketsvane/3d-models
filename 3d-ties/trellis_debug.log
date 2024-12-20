@@ -1,0 +1,563 @@
+2024-12-08 16:28:14,084 - INFO - Starting batch processing...
+2024-12-08 16:28:14,086 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-08 16:28:14,256 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS HTTP/11" 200 11943
+2024-12-08 16:28:14,387 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS/runtime HTTP/11" 200 303
+2024-12-08 16:28:14,388 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:28:14,389 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:28:14,394 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:28:14,419 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x7416460512b0>
+2024-12-08 16:28:14,419 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x741645b7ad50> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:28:14,455 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x741645b6aed0>
+2024-12-08 16:28:14,456 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:28:14,456 - DEBUG - send_request_headers.complete
+2024-12-08 16:28:14,456 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:28:14,456 - DEBUG - send_request_body.complete
+2024-12-08 16:28:14,457 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:28:14,709 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:28:14 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'37410'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/config'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'MVMLfx'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:28:14,710 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/config "HTTP/1.1 200 OK"
+2024-12-08 16:28:14,710 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:28:14,771 - DEBUG - receive_response_body.complete
+2024-12-08 16:28:14,771 - DEBUG - response_closed.started
+2024-12-08 16:28:14,771 - DEBUG - response_closed.complete
+2024-12-08 16:28:14,772 - DEBUG - close.started
+2024-12-08 16:28:14,773 - DEBUG - close.complete
+2024-12-08 16:28:14,774 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:28:14,775 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:28:14,784 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:28:14,803 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x741645b9eae0>
+2024-12-08 16:28:14,804 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x741645b8bd50> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:28:14,840 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x741645b9e9f0>
+2024-12-08 16:28:14,840 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:28:14,840 - DEBUG - send_request_headers.complete
+2024-12-08 16:28:14,841 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:28:14,841 - DEBUG - send_request_body.complete
+2024-12-08 16:28:14,841 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:28:15,093 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:28:15 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'9615'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/info?serialize=False'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'BDzcbu'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:28:15,094 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/info?serialize=False "HTTP/1.1 200 OK"
+2024-12-08 16:28:15,094 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:28:15,094 - DEBUG - receive_response_body.complete
+2024-12-08 16:28:15,095 - DEBUG - response_closed.started
+2024-12-08 16:28:15,095 - DEBUG - response_closed.complete
+2024-12-08 16:28:15,095 - DEBUG - close.started
+2024-12-08 16:28:15,095 - DEBUG - close.complete
+2024-12-08 16:28:15,096 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:28:15,097 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-08 16:28:15,098 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:28:15,098 - INFO - Found 1 images to process
+2024-12-08 16:28:15,099 - INFO - Processing: En-arbeider.jpg
+2024-12-08 16:28:15,100 - DEBUG - Processing image: En-arbeider.jpg (size: 17175 bytes)
+2024-12-08 16:28:15,101 - INFO - 1. Preprocessing image...
+2024-12-08 16:28:15,103 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:15,107 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=20 socket_options=None
+2024-12-08 16:28:15,125 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x741645b9e720>
+2024-12-08 16:28:15,126 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x741645b8bdd0> server_hostname='lukketsvane-trellis.hf.space' timeout=20
+2024-12-08 16:28:15,161 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x741645b9e990>
+2024-12-08 16:28:15,161 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:28:15,162 - DEBUG - send_request_headers.complete
+2024-12-08 16:28:15,162 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:28:15,162 - DEBUG - send_request_body.complete
+2024-12-08 16:28:15,162 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:28:15,183 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:15,218 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/py_client/initiated HTTP/11" 200 0
+2024-12-08 16:28:15,338 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:28:15 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/heartbeat/912dab5f-404f-4343-9b2f-e421eb3fdcd6'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'5z2ZZO'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:28:15,339 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/heartbeat/912dab5f-404f-4343-9b2f-e421eb3fdcd6 "HTTP/1.1 200 OK"
+2024-12-08 16:28:15,340 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:28:20,185 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:20,272 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:25,274 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:25,354 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:30,356 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:30,434 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:35,436 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:35,526 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:40,528 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:40,607 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:45,608 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:45,693 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:50,695 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:50,778 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:28:55,779 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:28:55,886 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:00,888 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:29:00,974 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:05,975 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:29:06,068 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:11,070 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:29:11,177 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:16,178 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:29:16,270 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:21,272 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:29:21,375 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:26,377 - DEBUG - Starting new HTTPS connection (1): lukketsvane-trellis.hf.space:443
+2024-12-08 16:29:26,477 - DEBUG - https://lukketsvane-trellis.hf.space:443 "GET /queue/status HTTP/11" 404 3020
+2024-12-08 16:29:29,575 - INFO - 
+Processing interrupted by user
+2024-12-08 16:29:29,576 - INFO - Batch processing complete!
+2024-12-08 16:29:30,546 - INFO - Starting batch processing...
+2024-12-08 16:29:30,549 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-08 16:29:30,694 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS HTTP/11" 200 11943
+2024-12-08 16:29:30,807 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS/runtime HTTP/11" 200 303
+2024-12-08 16:29:30,808 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:29:30,809 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:29:30,815 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:29:30,836 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b277556540>
+2024-12-08 16:29:30,836 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2774fe050> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:29:30,872 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b277556690>
+2024-12-08 16:29:30,872 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:30,873 - DEBUG - send_request_headers.complete
+2024-12-08 16:29:30,873 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:29:30,873 - DEBUG - send_request_body.complete
+2024-12-08 16:29:30,873 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:31,118 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:29:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'37410'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/config'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'v0vr4t'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:29:31,118 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/config "HTTP/1.1 200 OK"
+2024-12-08 16:29:31,119 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:29:31,183 - DEBUG - receive_response_body.complete
+2024-12-08 16:29:31,184 - DEBUG - response_closed.started
+2024-12-08 16:29:31,184 - DEBUG - response_closed.complete
+2024-12-08 16:29:31,184 - DEBUG - close.started
+2024-12-08 16:29:31,185 - DEBUG - close.complete
+2024-12-08 16:29:31,186 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:29:31,186 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:29:31,191 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:29:31,228 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2775822a0>
+2024-12-08 16:29:31,228 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27756bc50> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:29:31,264 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2775821e0>
+2024-12-08 16:29:31,264 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:31,265 - DEBUG - send_request_headers.complete
+2024-12-08 16:29:31,265 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:29:31,265 - DEBUG - send_request_body.complete
+2024-12-08 16:29:31,265 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:31,514 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:29:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'9615'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/info?serialize=False'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'-Vj-dl'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:29:31,515 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/info?serialize=False "HTTP/1.1 200 OK"
+2024-12-08 16:29:31,515 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:29:31,516 - DEBUG - receive_response_body.complete
+2024-12-08 16:29:31,516 - DEBUG - response_closed.started
+2024-12-08 16:29:31,516 - DEBUG - response_closed.complete
+2024-12-08 16:29:31,516 - DEBUG - close.started
+2024-12-08 16:29:31,517 - DEBUG - close.complete
+2024-12-08 16:29:31,518 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:29:31,518 - INFO - Found 1 images to process
+2024-12-08 16:29:31,519 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-08 16:29:31,519 - INFO - Processing: En-arbeider.jpg
+2024-12-08 16:29:31,520 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:29:31,520 - INFO - 1. Preprocessing image...
+2024-12-08 16:29:31,525 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:29:31,526 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:29:31,532 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=20 socket_options=None
+2024-12-08 16:29:31,535 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:29:31,568 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b277556480>
+2024-12-08 16:29:31,568 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27758c350> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:29:31,569 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b277581f70>
+2024-12-08 16:29:31,569 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27756bcd0> server_hostname='lukketsvane-trellis.hf.space' timeout=20
+2024-12-08 16:29:31,603 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b277581e80>
+2024-12-08 16:29:31,603 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-08 16:29:31,604 - DEBUG - send_request_headers.complete
+2024-12-08 16:29:31,604 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-08 16:29:31,604 - DEBUG - send_request_body.complete
+2024-12-08 16:29:31,604 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-08 16:29:31,606 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b277581f10>
+2024-12-08 16:29:31,606 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:31,607 - DEBUG - send_request_headers.complete
+2024-12-08 16:29:31,607 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:29:31,607 - DEBUG - send_request_body.complete
+2024-12-08 16:29:31,607 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:31,638 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/py_client/initiated HTTP/11" 200 0
+2024-12-08 16:29:31,782 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:29:31 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/heartbeat/479f6b9d-0e42-4310-8b85-5a523cb1f2be'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'bO4SXB'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:29:31,782 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/heartbeat/479f6b9d-0e42-4310-8b85-5a523cb1f2be "HTTP/1.1 200 OK"
+2024-12-08 16:29:31,783 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:29:31,850 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:29:31 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'47'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/join'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'-hj-7a'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:29:31,850 - INFO - HTTP Request: POST https://lukketsvane-trellis.hf.space/queue/join "HTTP/1.1 200 OK"
+2024-12-08 16:29:31,851 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-08 16:29:31,851 - DEBUG - receive_response_body.complete
+2024-12-08 16:29:31,851 - DEBUG - response_closed.started
+2024-12-08 16:29:31,851 - DEBUG - response_closed.complete
+2024-12-08 16:29:31,852 - DEBUG - close.started
+2024-12-08 16:29:31,852 - DEBUG - close.complete
+2024-12-08 16:29:31,852 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:29:31,853 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:29:31,859 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=None socket_options=None
+2024-12-08 16:29:31,884 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b27759fa40>
+2024-12-08 16:29:31,885 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27758c3d0> server_hostname='lukketsvane-trellis.hf.space' timeout=None
+2024-12-08 16:29:31,921 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b27759f950>
+2024-12-08 16:29:31,921 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:31,921 - DEBUG - send_request_headers.complete
+2024-12-08 16:29:31,921 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:29:31,922 - DEBUG - send_request_body.complete
+2024-12-08 16:29:31,922 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:32,166 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:29:32 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/data?session_hash=479f6b9d-0e42-4310-8b85-5a523cb1f2be'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'4ruCPB'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:29:32,166 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/queue/data?session_hash=479f6b9d-0e42-4310-8b85-5a523cb1f2be "HTTP/1.1 200 OK"
+2024-12-08 16:29:32,167 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:29:32,167 - DEBUG - receive_response_body.failed exception=GeneratorExit()
+2024-12-08 16:29:32,167 - DEBUG - response_closed.started
+2024-12-08 16:29:32,168 - DEBUG - response_closed.complete
+2024-12-08 16:29:32,203 - WARNING - Attempt 1 failed: The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch().
+2024-12-08 16:29:32,204 - INFO - Upstream error - waiting 27.25719467975334s before retry...
+2024-12-08 16:29:59,606 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS HTTP/11" 200 11943
+2024-12-08 16:29:59,738 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS/runtime HTTP/11" 200 303
+2024-12-08 16:29:59,738 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:29:59,739 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:29:59,744 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:29:59,767 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2775b5100>
+2024-12-08 16:29:59,767 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2775685d0> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:29:59,803 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2775b5040>
+2024-12-08 16:29:59,803 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:29:59,804 - DEBUG - send_request_headers.complete
+2024-12-08 16:29:59,804 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:29:59,804 - DEBUG - send_request_body.complete
+2024-12-08 16:29:59,804 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:00,054 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:00 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'37410'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/config'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'pfdF9J'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:00,055 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/config "HTTP/1.1 200 OK"
+2024-12-08 16:30:00,055 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:00,115 - DEBUG - receive_response_body.complete
+2024-12-08 16:30:00,116 - DEBUG - response_closed.started
+2024-12-08 16:30:00,116 - DEBUG - response_closed.complete
+2024-12-08 16:30:00,116 - DEBUG - close.started
+2024-12-08 16:30:00,116 - DEBUG - close.complete
+2024-12-08 16:30:00,117 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:00,118 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:00,124 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:30:00,148 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b27759fad0>
+2024-12-08 16:30:00,148 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2775bd4d0> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:30:00,183 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b27759ecf0>
+2024-12-08 16:30:00,184 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:00,184 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:00,185 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:00,185 - DEBUG - send_request_body.complete
+2024-12-08 16:30:00,185 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:00,424 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:00 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'9615'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/info?serialize=False'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'jyXj6L'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:00,425 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/info?serialize=False "HTTP/1.1 200 OK"
+2024-12-08 16:30:00,425 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:00,426 - DEBUG - receive_response_body.complete
+2024-12-08 16:30:00,426 - DEBUG - response_closed.started
+2024-12-08 16:30:00,426 - DEBUG - response_closed.complete
+2024-12-08 16:30:00,426 - DEBUG - close.started
+2024-12-08 16:30:00,427 - DEBUG - close.complete
+2024-12-08 16:30:00,430 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:00,430 - INFO - Attempt 2/5: Waiting 10.1s before retry...
+2024-12-08 16:30:00,432 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:00,441 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=20 socket_options=None
+2024-12-08 16:30:00,460 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2775b4dd0>
+2024-12-08 16:30:00,461 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27438f850> server_hostname='lukketsvane-trellis.hf.space' timeout=20
+2024-12-08 16:30:00,496 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2775b4d40>
+2024-12-08 16:30:00,496 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:00,496 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:00,497 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:00,497 - DEBUG - send_request_body.complete
+2024-12-08 16:30:00,497 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:00,522 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/py_client/initiated HTTP/11" 200 0
+2024-12-08 16:30:00,667 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:00 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/heartbeat/5c7f72ce-d1d5-4cf1-b82d-be81d261be4e'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'GpMAE5'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:00,667 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/heartbeat/5c7f72ce-d1d5-4cf1-b82d-be81d261be4e "HTTP/1.1 200 OK"
+2024-12-08 16:30:00,668 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:10,560 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:10,561 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:10,567 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:30:10,589 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274392900>
+2024-12-08 16:30:10,589 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27438f250> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:30:10,625 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743927e0>
+2024-12-08 16:30:10,625 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-08 16:30:10,626 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:10,626 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-08 16:30:10,626 - DEBUG - send_request_body.complete
+2024-12-08 16:30:10,626 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-08 16:30:10,907 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:10 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'47'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/join'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'twm7C9'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:10,907 - INFO - HTTP Request: POST https://lukketsvane-trellis.hf.space/queue/join "HTTP/1.1 200 OK"
+2024-12-08 16:30:10,907 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-08 16:30:10,908 - DEBUG - receive_response_body.complete
+2024-12-08 16:30:10,908 - DEBUG - response_closed.started
+2024-12-08 16:30:10,908 - DEBUG - response_closed.complete
+2024-12-08 16:30:10,908 - DEBUG - close.started
+2024-12-08 16:30:10,909 - DEBUG - close.complete
+2024-12-08 16:30:10,909 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:10,910 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:10,917 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=None socket_options=None
+2024-12-08 16:30:10,936 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274393fb0>
+2024-12-08 16:30:10,936 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27439c050> server_hostname='lukketsvane-trellis.hf.space' timeout=None
+2024-12-08 16:30:10,971 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274393e90>
+2024-12-08 16:30:10,972 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:10,972 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:10,972 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:10,972 - DEBUG - send_request_body.complete
+2024-12-08 16:30:10,973 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:11,213 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:11 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/data?session_hash=5c7f72ce-d1d5-4cf1-b82d-be81d261be4e'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'ZScU0Q'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:11,214 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/queue/data?session_hash=5c7f72ce-d1d5-4cf1-b82d-be81d261be4e "HTTP/1.1 200 OK"
+2024-12-08 16:30:11,214 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:11,214 - DEBUG - receive_response_body.failed exception=GeneratorExit()
+2024-12-08 16:30:11,214 - DEBUG - response_closed.started
+2024-12-08 16:30:11,215 - DEBUG - response_closed.complete
+2024-12-08 16:30:11,260 - WARNING - Attempt 2 failed: The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch().
+2024-12-08 16:30:11,260 - INFO - Upstream error - waiting 27.71052731122328s before retry...
+2024-12-08 16:30:39,100 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS HTTP/11" 200 11943
+2024-12-08 16:30:39,380 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS/runtime HTTP/11" 200 303
+2024-12-08 16:30:39,381 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:39,381 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:39,386 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:30:39,435 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274392ed0>
+2024-12-08 16:30:39,435 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2775bd550> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:30:39,471 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743930e0>
+2024-12-08 16:30:39,472 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:39,472 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:39,472 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:39,472 - DEBUG - send_request_body.complete
+2024-12-08 16:30:39,472 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:39,718 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:39 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'37410'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/config'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'xfjmWc'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:39,718 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/config "HTTP/1.1 200 OK"
+2024-12-08 16:30:39,719 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:39,785 - DEBUG - receive_response_body.complete
+2024-12-08 16:30:39,785 - DEBUG - response_closed.started
+2024-12-08 16:30:39,785 - DEBUG - response_closed.complete
+2024-12-08 16:30:39,785 - DEBUG - close.started
+2024-12-08 16:30:39,786 - DEBUG - close.complete
+2024-12-08 16:30:39,786 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:39,787 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:39,792 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:30:39,812 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743a0860>
+2024-12-08 16:30:39,812 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743ae450> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:30:39,848 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743a0740>
+2024-12-08 16:30:39,848 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:39,849 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:39,849 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:39,849 - DEBUG - send_request_body.complete
+2024-12-08 16:30:39,849 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:40,027 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:40 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'9615'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/info?serialize=False'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'cGgAK1'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:40,027 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/info?serialize=False "HTTP/1.1 200 OK"
+2024-12-08 16:30:40,028 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:40,028 - DEBUG - receive_response_body.complete
+2024-12-08 16:30:40,028 - DEBUG - response_closed.started
+2024-12-08 16:30:40,028 - DEBUG - response_closed.complete
+2024-12-08 16:30:40,028 - DEBUG - close.started
+2024-12-08 16:30:40,029 - DEBUG - close.complete
+2024-12-08 16:30:40,031 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:40,032 - INFO - Attempt 3/5: Waiting 18.1s before retry...
+2024-12-08 16:30:40,033 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:40,039 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=20 socket_options=None
+2024-12-08 16:30:40,059 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274393d10>
+2024-12-08 16:30:40,060 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b27438fd50> server_hostname='lukketsvane-trellis.hf.space' timeout=20
+2024-12-08 16:30:40,095 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274393800>
+2024-12-08 16:30:40,095 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:40,096 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:40,096 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:40,096 - DEBUG - send_request_body.complete
+2024-12-08 16:30:40,096 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:40,122 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/py_client/initiated HTTP/11" 200 0
+2024-12-08 16:30:40,271 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:40 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/heartbeat/51c44d92-cbb7-4159-be69-b20c3a062441'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'1LmqvB'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:40,272 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/heartbeat/51c44d92-cbb7-4159-be69-b20c3a062441 "HTTP/1.1 200 OK"
+2024-12-08 16:30:40,272 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:58,086 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:58,086 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:58,092 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:30:58,112 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c2f60>
+2024-12-08 16:30:58,112 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743c9350> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:30:58,147 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c2e40>
+2024-12-08 16:30:58,147 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-08 16:30:58,147 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:58,148 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-08 16:30:58,148 - DEBUG - send_request_body.complete
+2024-12-08 16:30:58,148 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-08 16:30:58,594 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:58 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'47'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/join'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'R8aHIR'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:58,595 - INFO - HTTP Request: POST https://lukketsvane-trellis.hf.space/queue/join "HTTP/1.1 200 OK"
+2024-12-08 16:30:58,595 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-08 16:30:58,596 - DEBUG - receive_response_body.complete
+2024-12-08 16:30:58,597 - DEBUG - response_closed.started
+2024-12-08 16:30:58,597 - DEBUG - response_closed.complete
+2024-12-08 16:30:58,597 - DEBUG - close.started
+2024-12-08 16:30:58,597 - DEBUG - close.complete
+2024-12-08 16:30:58,598 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:30:58,599 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:30:58,611 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=None socket_options=None
+2024-12-08 16:30:58,637 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743e06e0>
+2024-12-08 16:30:58,637 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743c93d0> server_hostname='lukketsvane-trellis.hf.space' timeout=None
+2024-12-08 16:30:58,673 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743e05c0>
+2024-12-08 16:30:58,674 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:58,674 - DEBUG - send_request_headers.complete
+2024-12-08 16:30:58,674 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:30:58,675 - DEBUG - send_request_body.complete
+2024-12-08 16:30:58,675 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:30:58,844 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:30:58 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/data?session_hash=51c44d92-cbb7-4159-be69-b20c3a062441'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'nI1KI_'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:30:58,845 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/queue/data?session_hash=51c44d92-cbb7-4159-be69-b20c3a062441 "HTTP/1.1 200 OK"
+2024-12-08 16:30:58,845 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:30:58,887 - DEBUG - receive_response_body.failed exception=GeneratorExit()
+2024-12-08 16:30:58,888 - DEBUG - response_closed.started
+2024-12-08 16:30:58,888 - DEBUG - response_closed.complete
+2024-12-08 16:30:58,910 - WARNING - Attempt 3 failed: The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch().
+2024-12-08 16:30:58,910 - INFO - Upstream error - waiting 21.16222350170492s before retry...
+2024-12-08 16:31:20,194 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS HTTP/11" 200 11951
+2024-12-08 16:31:20,320 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS/runtime HTTP/11" 200 311
+2024-12-08 16:31:20,321 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:31:20,321 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:31:20,327 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:31:20,354 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c2f90>
+2024-12-08 16:31:20,354 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743ca950> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:31:20,390 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c2d80>
+2024-12-08 16:31:20,390 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:20,390 - DEBUG - send_request_headers.complete
+2024-12-08 16:31:20,390 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:31:20,391 - DEBUG - send_request_body.complete
+2024-12-08 16:31:20,391 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:20,674 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:31:20 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'37410'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/config'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'jm1LJt'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:31:20,675 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/config "HTTP/1.1 200 OK"
+2024-12-08 16:31:20,675 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:31:20,750 - DEBUG - receive_response_body.complete
+2024-12-08 16:31:20,750 - DEBUG - response_closed.started
+2024-12-08 16:31:20,750 - DEBUG - response_closed.complete
+2024-12-08 16:31:20,751 - DEBUG - close.started
+2024-12-08 16:31:20,751 - DEBUG - close.complete
+2024-12-08 16:31:20,752 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:31:20,752 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:31:20,757 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:31:20,779 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743e1040>
+2024-12-08 16:31:20,779 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743fc350> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:31:20,814 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743e1280>
+2024-12-08 16:31:20,814 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:20,815 - DEBUG - send_request_headers.complete
+2024-12-08 16:31:20,815 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:31:20,815 - DEBUG - send_request_body.complete
+2024-12-08 16:31:20,815 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:21,014 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:31:21 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'9615'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/info?serialize=False'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'o7imYK'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:31:21,014 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/info?serialize=False "HTTP/1.1 200 OK"
+2024-12-08 16:31:21,014 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:31:21,015 - DEBUG - receive_response_body.complete
+2024-12-08 16:31:21,015 - DEBUG - response_closed.started
+2024-12-08 16:31:21,015 - DEBUG - response_closed.complete
+2024-12-08 16:31:21,015 - DEBUG - close.started
+2024-12-08 16:31:21,015 - DEBUG - close.complete
+2024-12-08 16:31:21,019 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:31:21,019 - INFO - Attempt 4/5: Waiting 34.0s before retry...
+2024-12-08 16:31:21,020 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:31:21,025 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=20 socket_options=None
+2024-12-08 16:31:21,044 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c3440>
+2024-12-08 16:31:21,044 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743fc2d0> server_hostname='lukketsvane-trellis.hf.space' timeout=20
+2024-12-08 16:31:21,079 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c3320>
+2024-12-08 16:31:21,079 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:21,079 - DEBUG - send_request_headers.complete
+2024-12-08 16:31:21,080 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:31:21,080 - DEBUG - send_request_body.complete
+2024-12-08 16:31:21,080 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:21,120 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/py_client/initiated HTTP/11" 200 0
+2024-12-08 16:31:21,252 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:31:21 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/heartbeat/f4b248aa-8fc3-4d13-a961-37ac231fd13a'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'k4-jNC'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:31:21,253 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/heartbeat/f4b248aa-8fc3-4d13-a961-37ac231fd13a "HTTP/1.1 200 OK"
+2024-12-08 16:31:21,253 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:31:55,010 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:31:55,010 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:31:55,016 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:31:55,050 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274407500>
+2024-12-08 16:31:55,050 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743c99d0> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:31:55,086 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2744073e0>
+2024-12-08 16:31:55,087 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-08 16:31:55,087 - DEBUG - send_request_headers.complete
+2024-12-08 16:31:55,087 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-08 16:31:55,088 - DEBUG - send_request_body.complete
+2024-12-08 16:31:55,088 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-08 16:31:55,326 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:31:55 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'47'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/join'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'qIQZkT'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:31:55,327 - INFO - HTTP Request: POST https://lukketsvane-trellis.hf.space/queue/join "HTTP/1.1 200 OK"
+2024-12-08 16:31:55,327 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-08 16:31:55,327 - DEBUG - receive_response_body.complete
+2024-12-08 16:31:55,327 - DEBUG - response_closed.started
+2024-12-08 16:31:55,327 - DEBUG - response_closed.complete
+2024-12-08 16:31:55,328 - DEBUG - close.started
+2024-12-08 16:31:55,328 - DEBUG - close.complete
+2024-12-08 16:31:55,328 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:31:55,329 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:31:55,336 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=None socket_options=None
+2024-12-08 16:31:55,365 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274420c50>
+2024-12-08 16:31:55,365 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743cb1d0> server_hostname='lukketsvane-trellis.hf.space' timeout=None
+2024-12-08 16:31:55,401 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274420b30>
+2024-12-08 16:31:55,401 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:55,401 - DEBUG - send_request_headers.complete
+2024-12-08 16:31:55,401 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:31:55,402 - DEBUG - send_request_body.complete
+2024-12-08 16:31:55,402 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:31:55,639 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 08 Dec 2024 16:31:55 GMT'), (b'Content-Type', b'text/event-stream; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'uvicorn'), (b'x-proxied-host', b'http://10.61.87.225'), (b'x-proxied-path', b'/queue/data?session_hash=f4b248aa-8fc3-4d13-a961-37ac231fd13a'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'JB2rEK'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:31:55,639 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/queue/data?session_hash=f4b248aa-8fc3-4d13-a961-37ac231fd13a "HTTP/1.1 200 OK"
+2024-12-08 16:31:55,640 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:31:55,640 - DEBUG - receive_response_body.failed exception=GeneratorExit()
+2024-12-08 16:31:55,640 - DEBUG - response_closed.started
+2024-12-08 16:31:55,640 - DEBUG - response_closed.complete
+2024-12-08 16:31:55,680 - WARNING - Attempt 4 failed: The upstream Gradio app has raised an exception but has not enabled verbose error reporting. To enable, set show_error=True in launch().
+2024-12-08 16:31:55,680 - INFO - Upstream error - waiting 25.52902671271112s before retry...
+2024-12-08 16:32:21,344 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS HTTP/11" 200 11942
+2024-12-08 16:32:21,468 - DEBUG - https://huggingface.co:443 "GET /api/spaces/lukketsvane/TRELLIS/runtime HTTP/11" 200 302
+2024-12-08 16:32:21,469 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:32:21,469 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:32:21,475 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:32:21,506 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274407080>
+2024-12-08 16:32:21,506 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743ecdd0> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:32:21,542 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2744074a0>
+2024-12-08 16:32:21,542 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:32:21,542 - DEBUG - send_request_headers.complete
+2024-12-08 16:32:21,543 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:32:21,543 - DEBUG - send_request_body.complete
+2024-12-08 16:32:21,543 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:32:21,709 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 500, b'Internal Server Error', [(b'Date', b'Sun, 08 Dec 2024 16:32:21 GMT'), (b'Content-Type', b'text/html; charset=utf-8'), (b'Content-Length', b'3044'), (b'Connection', b'keep-alive'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'u83dtR'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:32:21,709 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space/config "HTTP/1.1 500 Internal Server Error"
+2024-12-08 16:32:21,709 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:32:21,710 - DEBUG - receive_response_body.complete
+2024-12-08 16:32:21,710 - DEBUG - response_closed.started
+2024-12-08 16:32:21,710 - DEBUG - response_closed.complete
+2024-12-08 16:32:21,710 - DEBUG - close.started
+2024-12-08 16:32:21,711 - DEBUG - close.complete
+2024-12-08 16:32:21,711 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:32:21,711 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:32:21,717 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:32:21,745 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274420680>
+2024-12-08 16:32:21,745 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2743fc650> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:32:21,781 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b274421850>
+2024-12-08 16:32:21,781 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-08 16:32:21,781 - DEBUG - send_request_headers.complete
+2024-12-08 16:32:21,781 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-08 16:32:21,781 - DEBUG - send_request_body.complete
+2024-12-08 16:32:21,782 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-08 16:32:21,969 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 500, b'Internal Server Error', [(b'Date', b'Sun, 08 Dec 2024 16:32:21 GMT'), (b'Content-Type', b'text/html; charset=utf-8'), (b'Content-Length', b'3044'), (b'Connection', b'keep-alive'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'zeVlLX'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:32:21,969 - INFO - HTTP Request: GET https://lukketsvane-trellis.hf.space "HTTP/1.1 500 Internal Server Error"
+2024-12-08 16:32:21,969 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-08 16:32:21,970 - DEBUG - receive_response_body.complete
+2024-12-08 16:32:21,970 - DEBUG - response_closed.started
+2024-12-08 16:32:21,970 - DEBUG - response_closed.complete
+2024-12-08 16:32:21,970 - DEBUG - close.started
+2024-12-08 16:32:21,970 - DEBUG - close.complete
+2024-12-08 16:32:21,971 - ERROR - Failed to create authenticated client: Could not fetch config for https://lukketsvane-trellis.hf.space
+2024-12-08 16:32:21,971 - INFO - Attempt 5/5: Waiting 60.0s before retry...
+2024-12-08 16:32:25,096 - DEBUG - receive_response_body.failed exception=RemoteProtocolError(RemoteProtocolError('peer closed connection without sending complete message body (incomplete chunked read)'))
+2024-12-08 16:32:25,096 - DEBUG - receive_response_body.failed exception=RemoteProtocolError(RemoteProtocolError('peer closed connection without sending complete message body (incomplete chunked read)'))
+2024-12-08 16:32:25,097 - DEBUG - response_closed.started
+2024-12-08 16:32:25,097 - DEBUG - response_closed.complete
+2024-12-08 16:32:25,097 - DEBUG - response_closed.started
+2024-12-08 16:32:25,097 - DEBUG - receive_response_body.failed exception=RemoteProtocolError(RemoteProtocolError('peer closed connection without sending complete message body (incomplete chunked read)'))
+2024-12-08 16:32:25,098 - DEBUG - response_closed.started
+2024-12-08 16:32:25,098 - DEBUG - response_closed.complete
+2024-12-08 16:32:25,097 - DEBUG - receive_response_body.failed exception=RemoteProtocolError(RemoteProtocolError('peer closed connection without sending complete message body (incomplete chunked read)'))
+2024-12-08 16:32:25,099 - DEBUG - response_closed.started
+2024-12-08 16:32:25,099 - DEBUG - response_closed.complete
+2024-12-08 16:32:25,098 - DEBUG - response_closed.complete
+2024-12-08 16:33:21,972 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2024-12-08 16:33:21,972 - DEBUG - load_verify_locations cafile='/home/codespace/.local/lib/python3.12/site-packages/certifi/cacert.pem'
+2024-12-08 16:33:21,977 - DEBUG - connect_tcp.started host='lukketsvane-trellis.hf.space' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-08 16:33:22,032 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c3230>
+2024-12-08 16:33:22,032 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x72b2775a27d0> server_hostname='lukketsvane-trellis.hf.space' timeout=5.0
+2024-12-08 16:33:22,067 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x72b2743c1c10>
+2024-12-08 16:33:22,067 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-08 16:33:22,067 - DEBUG - send_request_headers.complete
+2024-12-08 16:33:22,067 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-08 16:33:22,068 - DEBUG - send_request_body.complete
+2024-12-08 16:33:22,068 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-08 16:33:22,236 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 500, b'Internal Server Error', [(b'Date', b'Sun, 08 Dec 2024 16:33:22 GMT'), (b'Content-Type', b'text/html; charset=utf-8'), (b'Content-Length', b'3044'), (b'Connection', b'keep-alive'), (b'link', b'<https://huggingface.co/spaces/lukketsvane/TRELLIS>;rel="canonical"'), (b'x-request-id', b'kcV8sk'), (b'vary', b'origin, access-control-request-method, access-control-request-headers'), (b'access-control-allow-credentials', b'true')])
+2024-12-08 16:33:22,236 - INFO - HTTP Request: POST https://lukketsvane-trellis.hf.space/queue/join "HTTP/1.1 500 Internal Server Error"
+2024-12-08 16:33:22,237 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-08 16:33:22,237 - DEBUG - receive_response_body.complete
+2024-12-08 16:33:22,237 - DEBUG - response_closed.started
+2024-12-08 16:33:22,237 - DEBUG - response_closed.complete
+2024-12-08 16:33:22,237 - DEBUG - close.started
+2024-12-08 16:33:22,238 - DEBUG - close.complete
+2024-12-08 16:33:22,238 - WARNING - Attempt 5 failed: Server error '500 Internal Server Error' for url 'https://lukketsvane-trellis.hf.space/queue/join'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2024-12-08 16:33:22,238 - ERROR - Failed to process En-arbeider.jpg: All 5 attempts failed. Last error: Server error '500 Internal Server Error' for url 'https://lukketsvane-trellis.hf.space/queue/join'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2024-12-08 16:33:22,238 - ERROR - Failed to process En-arbeider.jpg: All 5 attempts failed. Last error: Server error '500 Internal Server Error' for url 'https://lukketsvane-trellis.hf.space/queue/join'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+2024-12-08 16:34:07,238 - INFO - Batch processing complete!
+2024-12-08 16:34:07,239 - INFO - 
+=== Processing Summary ===
+2024-12-08 16:34:07,239 - INFO - Successfully processed: 0/1
+2024-12-08 16:34:07,239 - INFO - 
+Failed files:
+2024-12-08 16:34:07,239 - INFO - ✗ En-arbeider.jpg: All 5 attempts failed. Last error: Server error '500 Internal Server Error' for url 'https://lukketsvane-trellis.hf.space/queue/join'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
